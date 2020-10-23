@@ -9,6 +9,8 @@ export class AlunosComponent implements OnInit {
 
   public titulo = 'Alunos';
 
+  public alunoSelecionado: string;
+
   public alunos = [
     { id: 1, nome: 'Marta', sobrenome: 'Kent', telefone: 4730303030 },
     { id: 2, nome: 'Paula', sobrenome: 'Isabela', telefone: 4730121212 },
@@ -17,6 +19,16 @@ export class AlunosComponent implements OnInit {
     { id: 5, nome: 'Lucas', sobrenome: 'Alvares', telefone: 47303999999 },
     { id: 6, nome: 'Pedro', sobrenome: 'José', telefone: 4730555555 },
   ];
+
+  alunoSelect(aluno: any) {
+    this.alunoSelecionado = aluno.nome;
+  }
+
+  voltar() {
+    this.alunoSelecionado = '';
+  }
+
+
 
   constructor() { }
 
