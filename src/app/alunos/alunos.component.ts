@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Aluno } from '../models/Aluno';
 
 @Component({
@@ -40,9 +40,9 @@ export class AlunosComponent implements OnInit {
   }
   criarFrom() {
     this.alunoForm = this.fb.group({
-      nome: [''],
-      sobrenome: [''],
-      telefone: ['']
+      nome: ['', Validators.required],
+      sobrenome: ['', Validators.required],
+      telefone: ['', Validators.required]
     });
   }
   alunoSubmit() {
