@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Aluno } from '../models/Aluno';
 
 @Component({
@@ -8,11 +9,13 @@ import { Aluno } from '../models/Aluno';
   styleUrls: ['./alunos.component.css']
 })
 export class AlunosComponent implements OnInit {
-
+  public modalRef: BsModalRef;
   public alunoForm: FormGroup;
   public titulo = 'Alunos';
   public textSimple: string;
   public alunoSelecionado: Aluno;
+
+
 
   public alunos = [
     { id: 1, nome: 'Marta', sobrenome: 'Kent', telefone: 4730303030 },
@@ -23,6 +26,11 @@ export class AlunosComponent implements OnInit {
     { id: 6, nome: 'Pedro', sobrenome: 'José', telefone: 4730555555 },
   ];
 
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
   alunoSelect(aluno: Aluno) {
     this.alunoSelecionado = aluno;
     this.alunoForm.patchValue(aluno);
@@ -32,7 +40,8 @@ export class AlunosComponent implements OnInit {
     this.alunoSelecionado = null;
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private modalService: BsModalService) {
     this.criarFrom();
   }
 
