@@ -25,6 +25,7 @@ export class AlunosComponent implements OnInit {
 
   alunoSelect(aluno: Aluno) {
     this.alunoSelecionado = aluno;
+    this.alunoForm.patchValue(aluno);
   }
 
   voltar() {
@@ -37,7 +38,6 @@ export class AlunosComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   criarFrom() {
     this.alunoForm = this.fb.group({
       nome: [''],
@@ -45,11 +45,7 @@ export class AlunosComponent implements OnInit {
       telefone: ['']
     });
   }
-
   alunoSubmit() {
     console.log(this.alunoForm.value);
   }
-
-
-
 }
