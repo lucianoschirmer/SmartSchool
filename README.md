@@ -20,3 +20,10 @@ multi-layer using .NET core
 
 Get knowledge
 
+<hr/>
+
+<h3> In progress...</h3>
+
+- [X] Frontend    
+
+- [] Backend
