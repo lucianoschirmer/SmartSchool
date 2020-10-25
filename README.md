@@ -1,11 +1,12 @@
-# Single Page Application using ANGULAR, ASP.NET Core WebAPI and EF Core
+<h1>Single Page Application using ANGULAR, ASP.NET Core WebAPI and EF Core</h1>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
+<hr/>
 
-## What is?
+<h3> What is it?</h3>
 
-Web application using RESTful API Technology with ASP.NET Core 2 and Entity Framework Core 2 and as Angular Front End
+Web application using RESTful API Technology with ASP.NET Core 2, Entity Framework Core 2 and as Angular Front End
 
 RESTful API with ASP.NET Core
 API interaction using HTTP methods
@@ -13,8 +14,10 @@ Status codes and methods of security, validation
 Common features such as pagination, classification, filtering and data modeling and support for HATEOAS, versioning, cache and concurrency.
 multi-layer using .NET core
 
+<hr/>
 
-## Goals
+<h3> Goals</h3>
 
 Get knowledge
 
+<hr/>
