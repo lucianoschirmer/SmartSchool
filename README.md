@@ -25,5 +25,5 @@ Get knowledge
 <h3> In progress...</h3>
 
 - [X] Frontend    
-
 - [ ] Backend
+- [ ] SQLite
