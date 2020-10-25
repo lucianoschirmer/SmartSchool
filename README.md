@@ -1,4 +1,4 @@
-<h1>Single Page Application using ANGULAR, ASP.NET Core WebAPI and EF Core</h1>
+<h2>Single Page Application using ANGULAR, ASP.NET Core WebAPI and EF Core</h2>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
@@ -20,4 +20,3 @@ multi-layer using .NET core
 
 Get knowledge
 
-<hr/>
