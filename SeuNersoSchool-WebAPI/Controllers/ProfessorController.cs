@@ -3,10 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 namespace SeuNersoSchool_WebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class ProfessorController
+    [Route("api/[controller]")]
+    public class ProfessorController : ControllerBase
     {
-
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok("FUNCIONOU PROFESSOR");
+        }
     }
 
 }
