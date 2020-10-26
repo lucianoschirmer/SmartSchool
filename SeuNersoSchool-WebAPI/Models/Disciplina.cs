@@ -2,11 +2,17 @@ namespace SeuNersoSchool_WebAPI.Models
 {
     public class Disciplina
     {
-       public int Id { get; set; }
-       public string nome { get; set; }
-       public int ProfessorId { get; set; }
-       public Professor professor { get; set; }
-       public int MyProperty { get; set; }
+        public Disciplina() { }
+        public Disciplina(int Id, string Nome, int ProfessorId)
+        {
+            this.Id = Id;
+            this.Nome = Nome;
+            this.ProfessorId = ProfessorId;
+        }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public int ProfessorId { get; set; }
+        public Professor Professor { get; set; }
     }
 
 }
