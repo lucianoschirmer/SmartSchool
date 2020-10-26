@@ -1,17 +1,18 @@
+using System.Collections.Generic;
+
 namespace SeuNersoSchool_WebAPI.Models
 {
     public class Professor
     {
         public Professor() { }
-        public Professor(int Id, string Nome, string Disciplina)
+        public Professor(int Id, string Nome)
         {
             this.Id = Id;
             this.Nome = Nome;
-            this.Disciplina = Disciplina;
         }
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Disciplina { get; set; }
+        public IEnumerable<Disciplina> Disciplinas { get; set; }
     }
 
 }
