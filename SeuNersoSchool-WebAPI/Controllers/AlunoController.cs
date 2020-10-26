@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 
 namespace SeuNersoSchool_WebAPI.Controllers
@@ -9,7 +10,14 @@ namespace SeuNersoSchool_WebAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("FUNCIONOU ALUNO ");
+            try
+            {
+                return Ok("");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex.Message}");
+            }
         }
     }
 
