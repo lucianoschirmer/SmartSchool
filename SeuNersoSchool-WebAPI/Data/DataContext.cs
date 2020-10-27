@@ -6,7 +6,7 @@ namespace SeuNersoSchool_WebAPI.Data
 {
     public class DataContext : DbContext
     {
-         public DataContext(DbContextOptions<DataContext> options) : base (options) { }        
+        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Professor> Professores { get; set; }
         public DbSet<Disciplina> Disciplinas { get; set; }
@@ -25,7 +25,7 @@ namespace SeuNersoSchool_WebAPI.Data
                     new Professor(4, "Rodrigo"),
                     new Professor(5, "Alexandre"),
                 });
-            
+
             builder.Entity<Disciplina>()
                 .HasData(new List<Disciplina>{
                     new Disciplina(1, "Matemática", 1),
@@ -34,7 +34,7 @@ namespace SeuNersoSchool_WebAPI.Data
                     new Disciplina(4, "Inglês", 4),
                     new Disciplina(5, "Programação", 5)
                 });
-            
+
             builder.Entity<Aluno>()
                 .HasData(new List<Aluno>(){
                     new Aluno(1, "Marta", "Kent", "33225555"),

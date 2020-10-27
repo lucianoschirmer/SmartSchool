@@ -1,5 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
+using SeuNersoSchool_WebAPI.Data;
 
 namespace SeuNersoSchool_WebAPI.Controllers
 {
@@ -7,6 +8,11 @@ namespace SeuNersoSchool_WebAPI.Controllers
     [Route("api/[controller]")]
     public class AlunoController : ControllerBase
     {
+        public AlunoController(IRepository repo)
+        {
+
+        }
+
         [HttpGet]
         public IActionResult Get()
         {

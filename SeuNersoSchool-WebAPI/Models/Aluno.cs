@@ -1,9 +1,11 @@
+using System.Collections.Generic;
+
 namespace SeuNersoSchool_WebAPI.Models
 {
     public class Aluno
     {
         public Aluno() { }
-        
+
         public Aluno(int Id, string Nome, string Sobrenome, string Telefone)
         {
             this.Id = Id;
@@ -15,5 +17,7 @@ namespace SeuNersoSchool_WebAPI.Models
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public string Telefone { get; set; }
+        public IEnumerable<AlunoDisciplina> AlunosDisciplinas { get; set; }
+
     }
 }
