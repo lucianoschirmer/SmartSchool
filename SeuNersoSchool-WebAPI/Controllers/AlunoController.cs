@@ -79,6 +79,28 @@ namespace SeuNersoSchool_WebAPI.Controllers
             return BadRequest();
         }
 
+        [HttpPut("{alunoId}")]
+        public async Task<IActionResult> pput(int alunoId, Aluno model)
+        {
+            try
+            {
+                var aluno = await _repo.GetAlunoAsyncById(alunoId, false);
+                if (aluno == null) return NotFound();
+
+                _repo.Update(model);
+                if (await _repo.SaveChangesAsync())
+                {
+                    return Ok(model);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex.Message}");
+            }
+
+            return BadRequest();
+        }
+
 
     }
 }
