@@ -31,7 +31,9 @@ namespace SeuNersoSchool_WebAPI
                 x => x.UseSqlite(Configuration.GetConnectionString("DefaultConn"))
             );
 
-            services.AddControllers();
+            services.AddControllers()
+                    .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling =
+                        Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddScoped<IRepository, Repository>();
         }
 
