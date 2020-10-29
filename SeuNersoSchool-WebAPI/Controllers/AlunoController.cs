@@ -29,6 +29,21 @@ namespace SeuNersoSchool_WebAPI.Controllers
                 return BadRequest($"Erro: {ex.Message}");
             }
         }
+
+        [HttpGet("{AlunoId}")]
+        public async Task<IActionResult> GetByAlunoId(int AlunoId)
+        {
+            try
+            {
+                var result = await _repo.GetAlunoAsyncById(AlunoId, true);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex.Message}");
+            }
+        }
     }
 
 }
