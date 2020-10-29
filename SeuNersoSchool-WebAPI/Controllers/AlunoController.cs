@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SeuNersoSchool_WebAPI.Data;
+using SeuNersoSchool_WebAPI.Models;
 
 namespace SeuNersoSchool_WebAPI.Controllers
 {
@@ -58,6 +59,26 @@ namespace SeuNersoSchool_WebAPI.Controllers
                 return BadRequest($"Erro: {ex.Message}");
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> post(Aluno model)
+        {
+            try
+            {
+                _repo.Add(model);
+                if (await _repo.SaveChangesAsync())
+                {
+                    return Ok(model);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex.Message}");
+            }
+
+            return BadRequest();
+        }
+
 
     }
 }
