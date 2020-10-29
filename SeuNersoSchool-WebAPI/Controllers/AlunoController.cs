@@ -44,6 +44,20 @@ namespace SeuNersoSchool_WebAPI.Controllers
                 return BadRequest($"Erro: {ex.Message}");
             }
         }
-    }
 
+        [HttpGet("ByDisciplina/{disciplinaId}")]
+        public async Task<IActionResult> GetByDisciplina(int disciplinaId)
+        {
+            try
+            {
+                var result = await _repo.GetAlunosAsyncByDisciplinaId(disciplinaId, true);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex.Message}");
+            }
+        }
+
+    }
 }
